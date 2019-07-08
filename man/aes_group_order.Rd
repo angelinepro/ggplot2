@@ -87,4 +87,5 @@ boysbox + geom_line(aes(group = Subject), colour = "blue")
 \link{aes_linetype_size_shape} for more examples of \code{shape} and \code{linetype}.
 \link{geom_point}, \link{geom_bar}, \link{geom_line}, \link{geom_histogram} for geometries
 commonly used with groups.
+Learn more about aesthetics in \code{vignette("ggplot2-specs")}
 }

@@ -26,6 +26,7 @@
 #'   [aes_linetype_size_shape] for more examples of `shape` and `linetype`.
 #'   [geom_point], [geom_bar], [geom_line], [geom_histogram] for geometries
 #' commonly used with groups.
+#' Learn more about aesthetics in `vignette("ggplot2-specs")`
 #'
 #' @examples
 #' \donttest{

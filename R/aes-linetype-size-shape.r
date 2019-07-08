@@ -21,6 +21,7 @@
 #' @seealso
 #' [aes_group_order] for using `linetype`, `size`, and `shape` for grouping.
 #' [geom_line()] and [geom_point()] for geometries that are commonly used with these aesthetics.
+#' Learn more about aesthetics in `vignette("ggplot2-specs")`
 #'
 #' @name aes_linetype_size_shape
 #' @aliases linetype size shape

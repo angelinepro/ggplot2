@@ -70,4 +70,5 @@ s + geom_point(aes(shape = z), size = 4, colour = "Red", fill = "Black") +
 \seealso{
 \link{aes_group_order} for using \code{linetype}, \code{size}, and \code{shape} for grouping.
 \code{\link[=geom_line]{geom_line()}} and \code{\link[=geom_point]{geom_point()}} for geometries that are commonly used with these aesthetics.
+Learn more about aesthetics in \code{vignette("ggplot2-specs")}
 }
