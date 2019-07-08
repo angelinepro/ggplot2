@@ -3,24 +3,39 @@
 #' @name aes_group_order
 #' @aliases group
 #'
+#' @description
+#' The `group`, by default, is set to the interaction of all discrete variables in the
+#' plot. This often partitions the data correctly, but when it does not, or when
+#' no discrete variable is used in the plot, you will need to explicitly define the
+#' grouping structure, by mapping `group` to a variable that has a different value
+#' for each group.
+#'
+#' @details
+#' For most applications you can specify the grouping with
+#' various aesthetics (`colour`, `shape`, `fill`, `linetype`) or with facets. These are
+#' demonstrated in the examples below with the `mtcars`, `economics` and `diamonds` datasets.
+#'
+#' There are three common cases where the default does not display the data correctly.
+#' The examples below use a longitudinal dataset, `Oxboys`, from the nlme package to demonstrate
+#' these cases. `Oxboys` records the heights (height) and centered
+#' ages (age) of 26 boys (Subject),
+#' measured on nine occasions (Occasion).
+#'
+#' @seealso
+#'   [aes_colour_alpha] for more examples using `colour` and `fill`, and
+#'   [aes_linetype_size_shape] for more examples of `shape` and `linetype`.
+#'   [geom_point], [geom_bar], [geom_line], [geom_histogram] for geometries
+#' commonly used with groups.
+#'
 #' @examples
 #' \donttest{
-#'
-#' # By default, the group is set to the interaction of all discrete variables in the
-#' # plot. This often partitions the data correctly, but when it does not, or when
-#' # no discrete variable is used in the plot, you will need to explicitly define the
-#' # grouping structure, by mapping group to a variable that has a different value
-#' # for each group.
-#'
-#' # For most applications you can simply specify the grouping with
-#' # various aesthetics (colour, shape, fill, linetype) or with facets.
 #'
 #' p <- ggplot(mtcars, aes(wt, mpg))
 #' # A basic scatter plot
 #' p + geom_point(size = 4)
-#' # The colour aesthetic
+#' # Using the colour aesthetic
 #' p + geom_point(aes(colour = factor(cyl)), size = 4)
-#' # Or you can use shape to distinguish the data
+#' # Using the shape aesthetic
 #' p + geom_point(aes(shape = factor(cyl)), size = 4)
 #'
 #' # Using fill
@@ -42,17 +57,11 @@
 #' k <- ggplot(diamonds, aes(carat, stat(density))) + geom_histogram(binwidth = 0.2)
 #' k + facet_grid(. ~ cut)
 #'
-#' # There are three common cases where the default is not enough, and we
-#' # will consider each one below. In the following examples, we will use a simple
-#' # longitudinal dataset, Oxboys, from the nlme package. It records the heights
-#' # (height) and centered ages (age) of 26 boys (Subject), measured on nine
-#' # occasions (Occasion).
-#'
 #' # Multiple groups with one aesthetic
 #' h <- ggplot(nlme::Oxboys, aes(age, height))
-#' # A single line tries to connect all the observations
 #' h + geom_line()
-#' # The group aesthetic maps a different line for each subject
+#' # Default is not sufficient. A single line tries to connect all the observations.
+#' # To fix this, use the group aesthetic to map a different line for each subject.
 #' h + geom_line(aes(group = Subject))
 #'
 #' # Different groups on different layers
